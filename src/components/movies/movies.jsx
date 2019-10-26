@@ -4,7 +4,7 @@ import { getData } from "../redux/actions/getData";
 import Movie from "../movie/movie";
 
 const Movies = props => {
-  const movies = useSelector(state => state.movies);
+  const movies = useSelector(state => state.movieReducer.data); //.movies
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,7 +13,9 @@ const Movies = props => {
 
   return (
     <div>
-      {movies}
+      {movies.map(({ id, title }) => (
+        <Movie key={id} title={title} />
+      ))}
       {console.log(movies)}
     </div>
   );

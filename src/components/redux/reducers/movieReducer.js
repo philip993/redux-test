@@ -1,7 +1,7 @@
 import { LOAD_MOVIES, DATA_LOADED } from "../constants/actionsTypes";
 
 const initialState = {
-  movies: []
+  data: []
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -14,7 +14,7 @@ const movieReducer = (state = initialState, action) => {
     case DATA_LOADED:
       return {
         ...state,
-        movies: action.payload
+        data: action.payload
       };
     default:
       return state;
