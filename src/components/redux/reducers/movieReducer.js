@@ -9,7 +9,7 @@ const movieReducer = (state = initialState, action) => {
     case LOAD_MOVIES:
       return {
         ...state,
-        movies: action.payload
+        data: action.payload
       };
     case DATA_LOADED:
       return {
