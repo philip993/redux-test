@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../redux/actions/getData";
 import Movie from "../movie/movie";
+import { getMovies } from "../redux/actions/getMovies";
 
 const Movies = props => {
   const movies = useSelector(state => state.movieReducer); //.movies
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getData());
+    dispatch(getMovies());
   }, []);
 
   return (
     <div>
-      {movies.data.map(({ id, title }) => (
-        <Movie key={id} title={title} />
+      {movies.data.map(({ imdbID, ...otherProps }) => (
+        <Movie key={imdbID} {...otherProps} />
       ))}
       {console.log(movies)}
     </div>
