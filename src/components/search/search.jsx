@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchMovie } from "../redux/actions/searchMovie";
+import { searchMovie, searchQuery } from "../redux/actions/searchMovie";
 
 const Search = ({ text }) => {
   const search = useSelector(state => state.movieReducer);
@@ -8,12 +8,15 @@ const Search = ({ text }) => {
 
   const handleSearchInput = e => {
     const text = e.target.value;
+
+    dispatch(searchMovie(text));
   };
 
-  const handleSubmit = e => {
+  const handleUserClick = e => {
     e.preventDefault();
+    dispatch(searchQuery(text));
+    console.log(text);
   };
-
   return (
     <div className="search">
       <h3>Search Bar</h3>
@@ -24,11 +27,7 @@ const Search = ({ text }) => {
           value={text}
           placeholder="search for a movie..."
         />
-        <input
-          type="button"
-          value="SEARCH"
-          onClick={() => dispatch(searchMovie())}
-        />
+        <input type="button" value="SEARCH" onClick={handleUserClick} />
       </form>
     </div>
   );
