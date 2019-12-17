@@ -18,6 +18,7 @@ const Search = ({ text }) => {
 
   const handleUserClick = () => {
     dispatch(searchedTerm(text));
+    dispatch(searchQuery(text));
     console.log(text);
   };
   return (
