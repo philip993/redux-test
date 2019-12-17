@@ -1,8 +1,19 @@
-import { SEARCH_MOVIE, SEARCH_QUERY } from "../constants/actionsTypes";
+import {
+  SEARCH_MOVIE,
+  SEARCH_QUERY,
+  SEARCHED_TERM
+} from "../constants/actionsTypes";
 
 export const searchMovie = text => {
   return {
     type: SEARCH_MOVIE,
+    payload: text
+  };
+};
+
+export const searchedTerm = text => {
+  return {
+    type: SEARCHED_TERM,
     payload: text
   };
 };
