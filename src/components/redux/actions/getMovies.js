@@ -1,6 +1,6 @@
 import { LOAD_MOVIES } from "../constants/actionsTypes";
 
-export const getMovies = () => {
+export const getMovies = text => {
   return dispatch => {
     return fetch(`http://www.omdbapi.com/?apikey=5381508e&s=2018`)
       .then(response => response.json())
