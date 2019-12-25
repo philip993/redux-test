@@ -8,9 +8,7 @@ import {
 
 const initialState = {
   data: [],
-  searchData: "",
-  newData: [],
-  capturedTerm: ""
+  searchData: ""
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -28,12 +26,7 @@ const movieReducer = (state = initialState, action) => {
     case SEARCH_QUERY:
       return {
         ...state,
-        newData: action.payload
-      };
-    case SEARCHED_TERM:
-      return {
-        ...state,
-        capturedTerm: action.payload
+        data: action.payload
       };
     default:
       return state;

@@ -17,9 +17,6 @@ const Movies = props => {
         <Movie key={imdbID} {...otherProps} />
       ))}
       {console.log(movies)}
-      {movies.newData.map(({ imdbID, ...otherProps }) => (
-        <Movie key={imdbID} {...otherProps} />
-      ))}
     </div>
   );
 };

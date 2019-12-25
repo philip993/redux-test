@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  searchMovie,
-  searchQuery,
-  searchedTerm
-} from "../redux/actions/searchMovie";
+import { searchMovie, searchQuery } from "../redux/actions/searchMovie";
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -16,7 +12,7 @@ const Search = () => {
     dispatch(searchMovie(text));
   };
 
-  const handleUserClick = word => {
+  const handleUserClick = () => {
     dispatch(searchQuery(text));
     console.log(text);
   };
