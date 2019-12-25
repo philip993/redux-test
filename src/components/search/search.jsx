@@ -18,9 +18,10 @@ const Search = () => {
   };
   return (
     <div className="search">
-      <h3>Search Bar</h3>
-      <form>
+      <h3 className="searchTitle">Search Bar</h3>
+      <form className="searchForm">
         <input
+          className="searchInput"
           type="text"
           onChange={handleSearchInput}
           value={text}

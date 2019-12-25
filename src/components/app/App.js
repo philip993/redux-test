@@ -5,7 +5,8 @@ import Search from "../search/search";
 const App = props => {
   return (
     <div className="app">
-      <h1>Movie list</h1>
+      <h1 className="appTitle">Movie list</h1>
+      <span className="appDescription">Search for your favourite movies.</span>
       {<Search />}
       {<Movies />}
     </div>
