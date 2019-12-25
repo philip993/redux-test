@@ -11,10 +11,10 @@ export const searchMovie = text => {
   };
 };
 
-export const searchedTerm = text => {
+export const searchedTerm = word => {
   return {
     type: SEARCHED_TERM,
-    payload: text
+    payload: word
   };
 };
 
