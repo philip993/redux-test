@@ -28,7 +28,7 @@ const Search = () => {
           value={text}
           placeholder="search for a movie..."
         />
-
+        <br />
         <input
           className="searchFormButton"
           type="button"

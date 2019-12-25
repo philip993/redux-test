@@ -1,16 +1,22 @@
 import React from "react";
-import "./app.scss";
-import "./App.css";
+import { Switch, Route } from "react-router-dom";
 
-import Movies from "../movies/movies";
-import Search from "../search/search";
+import "./app.scss";
+
+import Header from "../header/header";
+import About from "../../pages/about/about";
+import Main from "../../pages/main/main";
+import Contact from "../../pages/contact/contact";
+
 const App = props => {
   return (
     <div className="app">
-      <h1 className="appTitle">Movie list</h1>
-      <span className="appDescription">Search for your favourite movies.</span>
-      {<Search />}
-      {<Movies />}
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
+      </Switch>
     </div>
   );
 };
