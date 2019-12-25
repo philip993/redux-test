@@ -1,0 +1,30 @@
+.search {
+  position: relative;
+  margin: auto;
+
+  .searchTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .searchForm {
+    width: 600px;
+    height: 50px;
+
+    .searchFormInput {
+      width: 350px;
+      height: 25px;
+      background-color: beige;
+      color: darkblue;
+    }
+
+    .searchFormButton {
+      margin: auto;
+      width: 100px;
+      height: 25px;
+      background-color: darkgrey;
+      color: white;
+      font-weight: bolder;
+    }
+  }
+}

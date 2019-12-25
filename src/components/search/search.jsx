@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./search.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { searchMovie, searchQuery } from "../redux/actions/searchMovie";
 
@@ -21,13 +22,19 @@ const Search = () => {
       <h3 className="searchTitle">Search Bar</h3>
       <form className="searchForm">
         <input
-          className="searchInput"
+          className="searchFormInput"
           type="text"
           onChange={handleSearchInput}
           value={text}
           placeholder="search for a movie..."
         />
-        <input type="button" value="SEARCH" onClick={handleUserClick} />
+
+        <input
+          className="searchFormButton"
+          type="button"
+          value="SEARCH"
+          onClick={handleUserClick}
+        />
       </form>
     </div>
   );

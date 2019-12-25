@@ -1,5 +1,7 @@
 import React from "react";
+import "./app.scss";
 import "./App.css";
+
 import Movies from "../movies/movies";
 import Search from "../search/search";
 const App = props => {
