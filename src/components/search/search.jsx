@@ -35,7 +35,7 @@ const Search = () => {
           placeholder="search for a movie..."
         />
         <br />
-        <input className="searchFormButton" type="submit" />
+        <input className="searchFormButton" disabled={!text} type="submit" />
       </form>
     </div>
   );
