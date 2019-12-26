@@ -3,12 +3,14 @@ import {
   SEARCH_MOVIE,
   SEARCH_QUERY_EXAMPLE,
   SEARCH_QUERY,
-  SEARCHED_TERM
+  SEARCHED_TERM,
+  FAILED_QUERY
 } from "../constants/actionsTypes";
 
 const initialState = {
   data: [],
-  searchData: ""
+  searchData: "",
+  errorMsg: ""
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -27,6 +29,11 @@ const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload
+      };
+    case FAILED_QUERY:
+      return {
+        ...state,
+        errorMsg: action.payload
       };
     default:
       return state;

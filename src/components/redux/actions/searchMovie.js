@@ -1,4 +1,8 @@
-import { SEARCH_MOVIE, SEARCH_QUERY } from "../constants/actionsTypes";
+import {
+  SEARCH_MOVIE,
+  SEARCH_QUERY,
+  FAILED_QUERY
+} from "../constants/actionsTypes";
 
 export const searchMovie = text => {
   return {
@@ -15,6 +19,12 @@ export const searchQuery = text => {
         dispatch({
           type: SEARCH_QUERY,
           payload: jsonResponse.Search
+        });
+      })
+      .catch(err => {
+        dispatch({
+          type: FAILED_QUERY,
+          payload: err
         });
       });
   };
