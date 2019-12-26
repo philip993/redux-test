@@ -16,6 +16,11 @@ const Search = () => {
   const handleUserSearch = e => {
     e.preventDefault();
     dispatch(searchQuery(text));
+    handleResetInput();
+  };
+
+  const handleResetInput = () => {
+    setText("");
   };
 
   return (
