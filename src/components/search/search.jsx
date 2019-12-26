@@ -13,14 +13,15 @@ const Search = () => {
     dispatch(searchMovie(text));
   };
 
-  const handleUserClick = () => {
+  const handleUserSearch = e => {
+    e.preventDefault();
     dispatch(searchQuery(text));
-    console.log(text);
   };
+
   return (
     <div className="search">
       <h3 className="searchTitle">Search Bar</h3>
-      <form className="searchForm">
+      <form className="searchForm" onSubmit={handleUserSearch}>
         <input
           className="searchFormInput"
           type="text"
@@ -29,12 +30,7 @@ const Search = () => {
           placeholder="search for a movie..."
         />
         <br />
-        <input
-          className="searchFormButton"
-          type="button"
-          value="SEARCH"
-          onClick={handleUserClick}
-        />
+        <input className="searchFormButton" type="submit" />
       </form>
     </div>
   );
